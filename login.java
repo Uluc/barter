@@ -1,16 +1,9 @@
-//create a tomcat servlet for login
 import java.io.*;
+import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import java.sql.*;
-import java.util.*;
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.ParsePosition;
 
-public class login extends HttpServlet {
+public class Login extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
     public login() {

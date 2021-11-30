@@ -1,6 +1,6 @@
 //create java servlet to display the main page feed that shows the top 10 newest products
 
-public class MainPageFeed extends HttpServlet {
+public class StorePageFeed extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,8 +24,9 @@ public class MainPageFeed extends HttpServlet {
             //create a statement to execute the query
             Statement stmt = conn.createStatement();
             
+            String userid = request.getParameter("userid");
             //create a query to get the top 10 newest products
-            String query = "SELECT * FROM products ORDER BY product_id DESC LIMIT 10";
+            String query = "SELECT * FROM products ORDER BY product_id WHERE userid =" + userid;
             
             //execute the query
             ResultSet rs = stmt.executeQuery(query);
