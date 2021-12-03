@@ -23,7 +23,7 @@ public class StorePageFeed extends HttpServlet {
             
             //create a statement to execute the query
             Statement stmt = conn.createStatement();
-            
+
             String userid = request.getParameter("userid");
             //create a query to get the top 10 newest products
             String query = "SELECT * FROM products ORDER BY product_id WHERE userid =" + userid;
@@ -55,4 +55,20 @@ public class StorePageFeed extends HttpServlet {
             out.println("<p>Error: " + e.getMessage());
         }
     }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+
+    public void init() throws ServletException {
+    }
+
+    public void destroy() {
+    }
+
+    public String getServletInfo() {
+        return "Short description";
+    }
+
+
 }
